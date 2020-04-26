@@ -17,8 +17,10 @@ func Test_CallWithoutArgs(t *testing.T) {
 	client := newClient(t)
 	defer client.Close()
 
+	ctx := context.Background()
+
 	var result time.Time
-	if err := client.Call("service.time", nil, &result); err != nil {
+	if err := client.Call(ctx, "service.time", nil, &result); err != nil {
 		t.Fatalf("service.time call error: %v", err)
 	}
 }

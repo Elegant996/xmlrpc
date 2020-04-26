@@ -6,9 +6,10 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/http/cookiejar"
-	"net/rpc"
 	"net/url"
 	"sync"
+	
+	"github.com/keegancsmith/rpc"
 )
 
 type Client struct {
